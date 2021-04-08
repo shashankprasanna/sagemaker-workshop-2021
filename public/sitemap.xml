@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/0_setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/1_data-prep/builtin_cifar10.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/0_setup/studio_setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/2_build-train/builtin_cifar10.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/1_data-prep.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/2_build-train.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/4_clean-up/tensorflow_cifar10.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/3_end-to-end-pipeline/tensorflow_cifar10.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/3_end-to-end-pipeline.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/4_clean-up.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags.html</loc>
+  </url>
+  
+</urlset>
