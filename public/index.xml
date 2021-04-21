@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Getting started with Amazon SageMaker Workshop on Deep learning with Amazon SageMaker Studio</title>
-    <link>http://example.org/</link>
+    <link>/</link>
     <description>Recent content in Getting started with Amazon SageMaker Workshop on Deep learning with Amazon SageMaker Studio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Preparation with Amazon SageMaker Studiod</title>
-      <link>http://example.org/1_data-prep/builtin_cifar10.html</link>
+      <link>/1_data-prep/builtin_cifar10.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/1_data-prep/builtin_cifar10.html</guid>
+      <guid>/1_data-prep/builtin_cifar10.html</guid>
       <description> Step 1 - Launch SageMaker Studio Notebook Once you launch SageMaker Studio follow the instructions below to start a notebook.
 A. Go to File-&amp;gt; New Launcher TBD </description>
     </item>
     
     <item>
       <title>Setup Amazon SageMaker Studio</title>
-      <link>http://example.org/0_setup/studio_setup.html</link>
+      <link>/0_setup/studio_setup.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/0_setup/studio_setup.html</guid>
+      <guid>/0_setup/studio_setup.html</guid>
       <description>Step 1. Log in to the Amazon SageMaker console  Open the AWS Management Console in a new window, so you can keep this tutorial open. In the AWS Console search bar, type SageMaker and select Amazon SageMaker to open the service console.  Step 2. Set up Amazon SageMaker Studio In this step, you&amp;#39;ll setup Amazon SageMaker Studio. The SageMaker Studio Notebooks within Studio
 are one-click Jupyter notebooks and contain everything you need to build and test your training scripts.</description>
     </item>
     
     <item>
       <title>Train and tune an XGBoost model</title>
-      <link>http://example.org/2_build-train/builtin_cifar10.html</link>
+      <link>/2_build-train/builtin_cifar10.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/2_build-train/builtin_cifar10.html</guid>
+      <guid>/2_build-train/builtin_cifar10.html</guid>
       <description>Step 1 - Launch SageMaker Studio Notebook Once you launch SageMaker Studio follow the instructions below to start a notebook.
 A. Go to File-&amp;gt; New Launcher B. Select MXNET Optimized for GPU C. Select Python 3 Step 2 - Setting up Permissions and environment variables In this step we setup some prequisites so our notebook can authenticate and link to other AWS Services.
 There are 3 parts to this:  Define the S3 bucket that you want to use for training and model data.</description>
@@ -43,19 +43,19 @@ There are 3 parts to this:  Define the S3 bucket that you want to use for traini
     
     <item>
       <title>Clean up resources</title>
-      <link>http://example.org/4_clean-up/tensorflow_cifar10.html</link>
+      <link>/4_clean-up/tensorflow_cifar10.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/4_clean-up/tensorflow_cifar10.html</guid>
+      <guid>/4_clean-up/tensorflow_cifar10.html</guid>
       <description> TBD </description>
     </item>
     
     <item>
       <title>Setup an end-to-end ML pipeline</title>
-      <link>http://example.org/3_end-to-end-pipeline/tensorflow_cifar10.html</link>
+      <link>/3_end-to-end-pipeline/tensorflow_cifar10.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/3_end-to-end-pipeline/tensorflow_cifar10.html</guid>
+      <guid>/3_end-to-end-pipeline/tensorflow_cifar10.html</guid>
       <description> TBD </description>
     </item>
     

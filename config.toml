@@ -1,9 +1,10 @@
-baseURL = "http://example.org/"
+RelativeURLs=true
+###########baseURL = disabled
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Deep learning with Amazon SageMaker Studio"
 theme = "learn"
-uglyurls = true
+uglyurls=true
 sectionPagesMenu = "main"
 pygmentsCodeFences = true
 

@@ -1,90 +1,90 @@
 [
 {
-	"uri": "http://example.org/0_setup.html",
+	"uri": "/0_setup.html",
 	"title": "1. Setup",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://example.org/1_data-prep/builtin_cifar10.html",
+	"uri": "/1_data-prep/builtin_cifar10.html",
 	"title": "Data Preparation with Amazon SageMaker Studiod",
 	"tags": [],
 	"description": "",
 	"content": " Step 1 - Launch SageMaker Studio Notebook Once you launch SageMaker Studio follow the instructions below to start a notebook.\nA. Go to File-\u0026gt; New Launcher TBD "
 },
 {
-	"uri": "http://example.org/",
+	"uri": "/",
 	"title": "Getting started with Amazon SageMaker Workshop",
 	"tags": [],
 	"description": "",
 	"content": " Welcome to Getting started with Amazon SageMaker Workshop Your presenters:   Shashank Prasanna, Sr. Developer Advocate Amir Imani, AI/ML Specialist SA    \nIn this workshop you’ll learn how to use Amazon SageMaker to build, train and tune deep learning models using built-in algorithms as well as custom Tensorflow code.\nYou’ll go through the following steps (TBD):  Set up Amazon SageMaker Studio to build and train your deep learning models. Download a public dataset using Amazon SageMaker Studio Notebook and upload it to Amazon S3. Create an Amazon SageMaker Experiment to track and manage training jobs Run Amazon SageMaker large-scale training and model tuning: a. Using Built-in Algorithms. b. Using custom code for training with Tensorflow Improve accuracy by running a large-scale Amazon SageMaker Automatic Model Tuning job to find the best model hyperparameters  "
 },
 {
-	"uri": "http://example.org/0_setup/studio_setup.html",
+	"uri": "/0_setup/studio_setup.html",
 	"title": "Setup Amazon SageMaker Studio",
 	"tags": [],
 	"description": "",
 	"content": " Step 1. Log in to the Amazon SageMaker console  Open the AWS Management Console in a new window, so you can keep this tutorial open. In the AWS Console search bar, type SageMaker and select Amazon SageMaker to open the service console.  Step 2. Set up Amazon SageMaker Studio In this step, you\u0026#39;ll setup Amazon SageMaker Studio. The SageMaker Studio Notebooks within Studio\nare one-click Jupyter notebooks and contain everything you need to build and test your training scripts. Studio also includes experiment tracking and visualization so that it\u0026#39;s easy to manage your entire machine learning workflow in one place.\n Navigate to Amazon SageMaker Console \u0026amp;gt; Amazon SageMaker Studio  If this is your first time using Amazon SageMaker Studio, you must complete the Studio onboarding process. When onboarding, you can choose to use either AWS Single Sign-On (AWS SSO) or AWS Identity and Access Management (IAM) for authentication methods. When you use IAM authentication, you can choose either the Quick start or the Standard setup procedure. If you are unsure of which option to choose, see Onboard to Amazon SageMaker Studio and ask your IT administrator for assistance. For simplicity, this tutorial uses the Quick start procedure.\n In the Get started box, choose Quick start. Leave the default name as it is.  Under Execution role , choose Create an IAM role. In the dialog box that appears, choose Any S3 bucket and choose Create role. Amazon SageMaker creates a role with the required permissions and assigns it to your instance. This allows your Amazon SageMaker instance to access all the Amazon S3 buckets in your account. If you already have a bucket that you\u0026#39;d like to use instead, select Specific S3 buckets and specify the bucket name.  Select Create role. Amazon SageMaker creates the AmazonSageMaker-ExecutionRole-*** role.  Click Submit. You should see a message saying that the studio is being configured.  When Amazon SageMaker Studio is ready, click Open Studio Amazon SageMaker Studio should now be open on a separate browser tab.   "
 },
 {
-	"uri": "http://example.org/2_build-train/builtin_cifar10.html",
+	"uri": "/2_build-train/builtin_cifar10.html",
 	"title": "Train and tune an XGBoost model",
 	"tags": [],
 	"description": "",
 	"content": " Step 1 - Launch SageMaker Studio Notebook Once you launch SageMaker Studio follow the instructions below to start a notebook.\nA. Go to File-\u0026gt; New Launcher B. Select MXNET Optimized for GPU C. Select Python 3 Step 2 - Setting up Permissions and environment variables In this step we setup some prequisites so our notebook can authenticate and link to other AWS Services.\nThere are 3 parts to this:  Define the S3 bucket that you want to use for training and model data. Create a role for permissions Specify the built-in algorithm that you want to use.  TBD "
 },
 {
-	"uri": "http://example.org/1_data-prep.html",
+	"uri": "/1_data-prep.html",
 	"title": "2. Data Preparation",
 	"tags": [],
 	"description": "",
 	"content": " Data Preparation: In this section you\u0026rsquo;ll be using Amazon SageMaker Data Wrangler to analyze your dataset. You\u0026rsquo;ll be working with a tabular dataset consisting of default payments of credit card clients.\n"
 },
 {
-	"uri": "http://example.org/2_build-train.html",
+	"uri": "/2_build-train.html",
 	"title": "3. Build, train and tune ML models",
 	"tags": [],
 	"description": "",
 	"content": " Dataset: In this section you\u0026rsquo;ll learn how to build train and tune your machine learning models.\n"
 },
 {
-	"uri": "http://example.org/4_clean-up/tensorflow_cifar10.html",
+	"uri": "/4_clean-up/tensorflow_cifar10.html",
 	"title": "Clean up resources",
 	"tags": [],
 	"description": "",
 	"content": " TBD "
 },
 {
-	"uri": "http://example.org/3_end-to-end-pipeline/tensorflow_cifar10.html",
+	"uri": "/3_end-to-end-pipeline/tensorflow_cifar10.html",
 	"title": "Setup an end-to-end ML pipeline",
 	"tags": [],
 	"description": "",
 	"content": " TBD "
 },
 {
-	"uri": "http://example.org/3_end-to-end-pipeline.html",
+	"uri": "/3_end-to-end-pipeline.html",
 	"title": "4. End-to-end ML Pipelines",
 	"tags": [],
 	"description": "",
 	"content": " Dataset: In this section you\u0026rsquo;ll learn how to setup end-to-end ML pipelines.\n"
 },
 {
-	"uri": "http://example.org/4_clean-up.html",
+	"uri": "/4_clean-up.html",
 	"title": "5. Clean up resources",
 	"tags": [],
 	"description": "",
 	"content": " Dataset: In this section you\u0026rsquo;ll clean up resources used for this workshop.\n"
 },
 {
-	"uri": "http://example.org/categories.html",
+	"uri": "/categories.html",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://example.org/tags.html",
+	"uri": "/tags.html",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

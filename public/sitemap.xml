@@ -3,55 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/0_setup.html</loc>
+    <loc>/0_setup.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/1_data-prep/builtin_cifar10.html</loc>
+    <loc>/1_data-prep/builtin_cifar10.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/0_setup/studio_setup.html</loc>
+    <loc>/0_setup/studio_setup.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/2_build-train/builtin_cifar10.html</loc>
+    <loc>/2_build-train/builtin_cifar10.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/1_data-prep.html</loc>
+    <loc>/1_data-prep.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/2_build-train.html</loc>
+    <loc>/2_build-train.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/4_clean-up/tensorflow_cifar10.html</loc>
+    <loc>/4_clean-up/tensorflow_cifar10.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/3_end-to-end-pipeline/tensorflow_cifar10.html</loc>
+    <loc>/3_end-to-end-pipeline/tensorflow_cifar10.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/3_end-to-end-pipeline.html</loc>
+    <loc>/3_end-to-end-pipeline.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/4_clean-up.html</loc>
+    <loc>/4_clean-up.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/categories.html</loc>
+    <loc>/categories.html</loc>
   </url>
   
   <url>
-    <loc>http://example.org/tags.html</loc>
+    <loc>/tags.html</loc>
   </url>
   
 </urlset>
