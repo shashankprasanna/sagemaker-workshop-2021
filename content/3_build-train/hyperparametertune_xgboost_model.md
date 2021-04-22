@@ -3,10 +3,14 @@ title: "3.2 Hyperparameter tuning and bias mitigation"
 weight: 2
 ---
 
-# Train a new model
+{{% notice info %}}
+Start this section in a new Jupyter notebook
+{{% /notice %}}
 
-In this second model, you will fix the gender imbalance in the dataset using SMOTE and train another model using XGBoost with hyperparameter tuning and Debugger. This model will also be saved to our registry and eventually approved for deployment.
+In this section we'll train a second model fix the gender imbalance in the dataset using SMOTE and train the model using XGBoost with hyperparameter tuning and Debugger. We will also save this modelto our registry and eventually approved for deployment.
 
+
+### Import necessary packages
 
 ```bash
 !pip install imbalanced-learn==0.7.0 -q
@@ -69,7 +73,7 @@ df = pd.read_csv(local_processed_path)
 df.head()
 ```
 
-### SMOTE
+### Use SMOTE balance the dataset
 
 One approach to addressing imbalanced datasets is to oversample the minority class. New examples can be synthesized from the existing examples. This is a type of data augmentation for the minority class and is referred to as the Synthetic Minority Oversampling Technique, or SMOTE for short.
 
@@ -86,7 +90,7 @@ df_resampled, _ = sm.fit_resample(df, df['SEX'])
 df_resampled['SEX'].value_counts()
 ```
 
-### Saving data back to S3
+### Save updated dataset to S3
 
 
 ```python
@@ -218,7 +222,7 @@ tuner = HyperparameterTuner(xgb_estimator,
 # You can increase the number of jobs, etc. I set them to 10, 4 for the demo purpose
 ```
 
-## Launch Hyperparameter Tuning job
+### Launch Hyperparameter Tuning job
 
 Now we can launch a hyperparameter tuning job by calling fit() function. After the hyperparameter tuning job is created, we can go to SageMaker console to track the progress of the hyperparameter tuning job until it is completed.
 
@@ -243,9 +247,9 @@ training_smote_job_name = tuner.best_training_job()
 %store training_smote_job_name
 ```
 
-# Register Artifacts
+### Register Artifacts
 
-### Create model from estimator
+#### Create model from estimator
 
 
 ```python
@@ -285,7 +289,7 @@ else:
 %store model_2_name
 ```
 
-### Training data artifact
+#### Training data artifact
 
 
 ```python
@@ -307,7 +311,7 @@ else:
     print(f'Create artifact {training_data_artifact.artifact_arn}: SUCCESSFUL')
 ```
 
-### Model artifact
+#### Model artifact
 
 
 ```python
@@ -329,7 +333,7 @@ else:
     print(f'Create artifact {model_artifact.artifact_arn}: SUCCESSFUL')
 ```
 
-### Set artifact associations¶
+#### Set artifact associations
 
 
 
@@ -374,7 +378,7 @@ for artifact_arn in output_artifacts:
         print(f"Association already exists between {trial_component_arn} and {a.artifact_arn}.\n")
 ```
 
-## Create Model Package for the Second Trained Model
+#### Create Model Package for the Second Trained Model
 
 
 ```python
@@ -423,7 +427,7 @@ inference_spec ={
 # {'ModelDataUrl': }
 ```
 
-### Register second model package to Model Package Group
+#### Register second model package to Model Package Group
 
 
 ```python
@@ -456,14 +460,14 @@ while mp_status not in ['Completed', 'Failed']:
 print(f'model package status: {mp_status}')
 ```
 
-### View both models in the registry
+#### View both models in the registry
 
 
 ```python
 sagemaker_boto_client.list_model_packages(ModelPackageGroupName=mpg_name)['ModelPackageSummaryList']
 ```
 
-## Optional Section: Model Bias and Explainability
+#### Optional Section: Model Bias and Explainability
 
 
 ```python
@@ -515,7 +519,7 @@ print(f'Downloaded clarify report from previous Clarify job: {clarify_bias_job_2
 display("Click link below to view the Clarify repot.", FileLink("../outputs/clarify_output/bias_2_report.pdf"))
 ```
 
-## Explainability
+#### Explainability
 
 
 ```python

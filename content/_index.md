@@ -6,7 +6,6 @@ weight: 1
 
 # Welcome to Getting started with Amazon SageMaker Workshop
 
-## Your presenters:
 <div>
 <table style="width:100%">
  <tr>

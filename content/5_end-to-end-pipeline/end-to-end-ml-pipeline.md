@@ -3,6 +3,10 @@ title: "5.1 Automating end-to-end ML pipelines"
 weight: 3
 ---
 
+{{% notice info %}}
+Start this section in a new Jupyter notebook
+{{% /notice %}}
+
 ```python
 import json
 import time

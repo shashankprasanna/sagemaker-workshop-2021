@@ -3,6 +3,12 @@ title: "3.1 Train an XGBoost model"
 weight: 1
 ---
 
+{{% notice info %}}
+Start this section in a new Jupyter notebook
+{{% /notice %}}
+
+### Import necessary packages
+
 ```python
 import os
 import json
@@ -23,10 +29,9 @@ from sagemaker.xgboost.estimator import XGBoost
 from sagemaker.debugger import Rule, rule_configs
 ```
 
+### Set region, boto3 and SageMaker SDK variables
 
 ```python
-# Set region, boto3 and SageMaker SDK variables¶
-
 #You can change this to a region of your choice
 region = sagemaker.Session().boto_region_name
 print("Using AWS Region: {}".format(region))
@@ -55,14 +60,19 @@ random_state = 42
 %store -r
 ```
 
-# Prepare Data
+### Prepare your dataset
 
-
+#### Read dataset from Amazon S3
 ```python
 df = pd.read_csv(s3_raw_data)
 print(df.shape)
 ```
 
+#### Drop ID column, rename and reorder LABEL column
+
+{{% notice note %}}
+This section implements the same steps you performed in Data Wrangler in the previous section.
+{{% /notice %}}
 
 ```python
 # move the target column to the begining based on XGBoost
@@ -77,7 +87,6 @@ df['LABEL'] = df['LABEL'].astype('int')
 # drop feature store created columns
 df = df.drop(columns=['ID'])
 ```
-
 
 ```python
 # store headers
@@ -95,8 +104,7 @@ df.to_csv(local_processed_path, index=False)
 print(df.shape)
 df.head()
 ```
-
-## Split DataFrame into Train, Validation & Test Sets
+### Split DataFrame into Train, Validation & Test Sets
 
 
 ```python
@@ -138,10 +146,10 @@ test_data_uri = response
 %store test_data_uri
 ```
 
-# Train a model using XGBoost
+### Train a model using XGBoost
 
 
-## Set the hyperparameters
+#### Set the hyperparameters
 
 
 ```python
@@ -157,7 +165,7 @@ hyperparameters = {
 %store hyperparameters
 ```
 
-## Create and fit the estimator
+#### Create and fit the estimator
 
 
 ```python
@@ -202,7 +210,17 @@ training_job_name = xgb_estimator.latest_training_job.job_name
 %store training_job_name
 ```
 
-Here we create the SageMaker model.
+You should the training start in your Jupyter Notebook:
+![](/images/train_tune/train1.png)
+
+SageMaker automatically tracks your training jobs. Click on the last option on the menu pane on the left as show in the image below. In the drop down on the top, choose `Experiments and trials`. You should see 1 training job and 2 processing jobs.
+![](/images/train_tune/train2.png)
+
+After training is complete, you'll see the total training time and billable seconds on the jupyter notebook.
+![](/images/train_tune/train3.png)
+
+
+Next we create a SageMaker model using the trained model in the previous step.
 
 
 ```python
@@ -215,14 +233,15 @@ sagemaker_session.create_model(model_name,
                      container_def)
 ```
 
-# Debugger Training Report
+### Debugger Training Report
 
-Amazon SageMaker Debugger is a new capability of Amazon SageMaker that allows debugging machine learning training. Amazon SageMaker Debugger helps you to monitor your training in near real time using rules and would provide you alerts, once it has detected inconsistency in training.
+Amazon SageMaker Debugger allows debugging machine learning training. Amazon SageMaker Debugger helps you to monitor your training in near real time using rules and would provide you alerts, once it has detected inconsistency in training.
 
+To view the debugger report, right click on the training job under `Experiments and trial` on the left pane, and click `Open Debugger for insights`
 
+![](/images/train_tune/debug1.png)
 
-<span style="color:red">**TODO:  SCREENSHOTS OF [PROFILER IN STUDIO](https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-training-xgboost-report.html)**</span>
-
+You can also manually download the reports from Amazon S3 for local use.
 
 ```python
 #get name of profiler report
@@ -260,15 +279,19 @@ while True:
 
 s3.download(xgb_report_path, "outputs/debugger/xgb/", recursive=True)
 s3.download(profile_report_path, "outputs/debugger/profiler/", recursive=True)
-display("Click link below to view the profiler report whcih will help you identify hardware bottlenecks.", FileLink("../outputs/debugger/profiler/profiler-output/profiler-report.html"))
-display("Click link below to view the XGBoost Training reports which will help you imporve your model", FileLink("../outputs/debugger/xgb/xgboost_report.html"))
+display("Click link below to view the profiler report whcih will help you identify hardware bottlenecks.", FileLink("outputs/debugger/profiler/profiler-output/profiler-report.html"))
+display("Click link below to view the XGBoost Training reports which will help you imporve your model", FileLink("outputs/debugger/xgb/xgboost_report.html"))
 ```
 
-# Amazon SageMaker Clarify
-Now that you have your model set up. Let’s say hello to SageMaker Clarify!
+Click on the locally downloaded profiler and xgboost SageMaker debugger reports
+![](/images/train_tune/debug2.png)
 
+Here is an example of the XGBoost Training report
+![](/images/train_tune/debug3.png)
 
-
+### Amazon SageMaker Clarify
+Now that you have your model set up. Let’s say use Amazon SageMaker Clarify to detect bias.
+SageMaker Clarify helps you detect possible pre- and post-training biases using a variety of metrics.
 
 ```python
 clarify_processor = clarify.SageMakerClarifyProcessor(role=sagemaker_role,
@@ -277,9 +300,6 @@ clarify_processor = clarify.SageMakerClarifyProcessor(role=sagemaker_role,
                                                       sagemaker_session=sagemaker_session)
 ```
 
-## Detecting Bias
-
-SageMaker Clarify helps you detect possible pre- and post-training biases using a variety of metrics.
 
 A `DataConfig` object communicates some basic information about data I/O to SageMaker Clarify. We specify where to find the input dataset, where to store the output, the target column (`label`), the header names, and the dataset type.
 
@@ -311,7 +331,7 @@ A `ModelPredictedLabelConfig` provides information on the format of your predict
 predictions_config = clarify.ModelPredictedLabelConfig(probability_threshold=0.5)
 ```
 
-### Writing BiasConfig
+#### Writing BiasConfig
 
 SageMaker Clarify also needs information on what the sensitive columns (`facets`) are, what the sensitive features (`facet_values_or_threshold`) may be, and what the desirable outcomes are (`label_values_or_threshold`). SageMaker Clarify can handle both categorical and continuous data for `facet_values_or_threshold` and for `label_values_or_threshold`. In this case we are using categorical data.
 
@@ -330,7 +350,7 @@ bias_config = clarify.BiasConfig(label_values_or_threshold=[0],
                                 )
 ```
 
-## Post-training Bias
+#### Post-training Bias
 
 Computing post-training bias metrics does require a trained model.
 
@@ -352,23 +372,29 @@ clarify_bias_job_1_name = clarify_processor.latest_job.name
 %store clarify_bias_job_1_name
 ```
 
-![](/images/train_tune/bias_detail.gif)
+
+{{% notice note %}}
+This step takes several minutes to run and generate the bias reports
+{{% /notice %}}
+
+After the step is finished running, you can view the reports right in SageMaker Studio
+![](/images/train_tune/debug4.png)
+
+You can also download the reports from Amazon S3 using the code below.
 
 ```python
-# TODO: try different facets, threshold to get meaningful reports
 s3_client.download_file(Bucket=default_bucket,
                         Key=f'{prefix}/clarify-output/bias_1/report.pdf',
                         Filename='./outputs/bias_1_report.pdf')
 print(f'Downloaded clarify report from previous Clarify job: {clarify_bias_job_1_name}')
 display("Click link below to view the Clarify repot.", FileLink("./outputs/bias_1_report.pdf"))
 ```
-
-<span style="color:red">**TODO:  SCREENSHOTS OF BIAS REPORT IN STUDIO**</span>
-
-https://sagemaker-examples.readthedocs.io/en/latest/sagemaker_processing/fairness_and_explainability/fairness_and_explainability.html
+![](/images/train_tune/debug5.png)
+![](/images/train_tune/debug6.png)
 
 
-# Model Lineage
+
+### Model Lineage Tracking
 
 Amazon SageMaker ML Lineage Tracking creates and stores information about the steps of a machine learning (ML) workflow from data preparation to model deployment. With the tracking information you can reproduce the workflow steps, track model and dataset lineage, and establish model governance and audit standards. With SageMaker Lineage Tracking data scientists and model builders can do the following:
 
@@ -432,7 +458,7 @@ else:
     print(f'Create artifact {model_artifact.artifact_arn}: SUCCESSFUL')
 ```
 
-### Set artifact associations
+#### Set artifact associations
 
 
 ```python
@@ -474,10 +500,10 @@ for a in output_artifacts:
         print(f"Association already exists with {a.artifact_type}")
 ```
 
-## Deposit Model and Lineage in SageMaker Model Registry
+#### Deposit Model and Lineage in SageMaker Model Registry
 
 
-### Create Model Package Group
+#### Create Model Package Group
 
 A Model Package Groups holds multiple versions or iterations of a model. Though it is not required to create them for every model in the registry, they help organize various models which all have the same purpose and provide autiomatic versioning.
 

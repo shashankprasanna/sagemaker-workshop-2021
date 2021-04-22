@@ -5,8 +5,4 @@ weight: 5
 ---
 
 ### Dataset:
-In this section you'll learn how to setup end-to-end ML pipelines.
-
-
-**Section walkthough**
-{{< youtube w7Ft2ymGmfc >}}
+In this section you'll learn how to setup and automate end-to-end ML pipelines.

@@ -3,6 +3,13 @@ title: "4.1 Deploy XGBoost model"
 weight: 1
 ---
 
+{{% notice info %}}
+Start this section in a new Jupyter notebook
+{{% /notice %}}
+
+
+### Import necessary packages
+
 ```python
 import json
 import time
@@ -48,7 +55,7 @@ random_state = 42
 %store
 ```
 
-# Approve the Second model
+### Approve the Second model
 
 
 ```python
@@ -61,7 +68,7 @@ model_package_update = {
 update_response = sagemaker_boto_client.update_model_package(**model_package_update)
 ```
 
-# Create an endpoint config + endpoint
+### Create an endpoint config + endpoint
 
 
 ```python
@@ -112,7 +119,7 @@ while endpoint_status == 'Creating':
         time.sleep(60)
 ```
 
-## Create a predictor
+### Create a predictor
 
 
 ```python
@@ -121,9 +128,9 @@ predictor = sagemaker.predictor.Predictor(
     sagemaker_session=sagemaker_session)
 ```
 
-# Make predictions!
+### Make predictions
 
-### sample a row from the test data
+Sample a row from the test data
 
 
 ```python
@@ -151,9 +158,9 @@ prediction
 print (f'Probablitity of default is:', prediction)
 ```
 
-# Model Monitor
+### Model Monitor
 
-## Enable real-time inference data capture
+#### Enable real-time inference data capture
 
 To enable data capture for monitoring the model data quality, you specify the new capture option called `DataCaptureConfig`. You can capture the request payload, the response payload or both with this configuration. The capture config applies to all variants. Please provide the Endpoint name in the following cell:
 
@@ -180,7 +187,7 @@ sagemaker_session.wait_for_endpoint(endpoint=endpoint_name)
 
 The contents of the single captured file should be all the data captured in an Amazon SageMaker-specific JSON-line formatted file. Each inference request is captured in a single line in the jsonl file. The line contains both the input and output merged together.
 
-## Baselining and continuous monitoring
+#### Baselining and continuous monitoring
 
 In addition to collecting the data, Amazon SageMaker provides the capability for you to monitor and evaluate the data observed by the endpoints. Two tasks are needed for this:
 
@@ -218,7 +225,7 @@ my_monitor.suggest_baseline(
 )
 ```
 
-### Explore the generated constraints and statistics
+#### Explore the generated constraints and statistics
 
 With the monitor object, you can also explore the generated constraints and statistics:
 
@@ -241,6 +248,6 @@ When deleting an endpoint, you need to first delete the monitoring schedule:
 
 
 ```python
-# predictor.delete_endpoint()
-# predictor.delete_model()
+predictor.delete_endpoint()
+predictor.delete_model()
 ```

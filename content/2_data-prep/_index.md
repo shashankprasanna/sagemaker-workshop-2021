@@ -19,5 +19,5 @@ The output or response variable we'll be building a model to predict is a binary
 The screenshot below shows part of the dataset. The red box shows the response variable that we'll train a model to predict.
 ![](/images/dataset_csv.png)
 
-**Section walkthough**
+**Section walkthough (TBD) **
 {{< youtube w7Ft2ymGmfc >}}
