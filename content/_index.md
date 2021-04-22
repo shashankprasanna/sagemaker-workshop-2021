@@ -10,7 +10,7 @@ weight: 1
 <div>
 <table style="width:100%">
  <tr>
-   <th>Shashank Prasanna, <br> Sr. Developer Advocate</th>
+   <th>Shashank Prasanna, <br> Sr. Developer Advocate, AI/ML</th>
    <th>Amir Imani, <br> AI/ML Specialist SA</th>
  </tr>
 </table>
@@ -18,16 +18,22 @@ weight: 1
 
 <br>
 
+Amazon SageMaker helps data scientists and developers to prepare, build, train, and deploy high-quality machine learning (ML) models quickly by bringing together a broad set of capabilities purpose-built for ML.
 
-In this workshop you’ll learn how to use Amazon SageMaker to build, train and tune deep learning models using built-in algorithms as well as custom Tensorflow code.
+In this workshop you'll learn how to:
 
-![SageMakerImage](https://sagemaker-workshop.com/images/sm-overview.png)
+* Easily analyze and prepare data using SageMaker Studio and SageMaker Data Wrangler
+* Build, train, and tune ML models
+* Deploy and monitor ML models, and create fully automated ML workflows with Amazon SageMaker Pipelines
 
-### You’ll go through the following steps (TBD):
-1. Set up Amazon SageMaker Studio to build and train your deep learning models.
-2. Download a public dataset using Amazon SageMaker Studio Notebook and upload it to Amazon S3.
-3. Create an Amazon SageMaker Experiment to track and manage training jobs
-4. Run Amazon SageMaker large-scale training and model tuning:
-	a. Using Built-in Algorithms.
-	b. Using custom code for training with Tensorflow
-5. Improve accuracy by running a large-scale Amazon SageMaker Automatic Model Tuning job to find the best model hyperparameters
+## Agenda
+
+* Introductions (5 mins)
+* Amazon SageMaker Studio Setup (15min)
+* Workshop Overview (20 mins)
+* Data preparation (45 mins)
+* **Break (15 mins)**
+* Build, train and tune ML models (1hr 45mins)
+* **Break (30 mins)**
+* Deploy ML models (45 min)
+* End to end ML pipelines (45 min)

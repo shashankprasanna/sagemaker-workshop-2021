@@ -2,7 +2,7 @@ RelativeURLs=true
 ###########baseURL = disabled
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Deep learning with Amazon SageMaker Studio"
+title = "Getting Started with Amazon SageMaker Studio"
 theme = "learn"
 uglyurls=true
 sectionPagesMenu = "main"
@@ -15,7 +15,7 @@ hrefTargetBlank = true
 themeVariant = "mine"
 showVisitedLinks = false
 author = "Shashank Prasanna"
-description = "Deep learning with Amazon SageMaker Studio"
+description = "Getting Started with Amazon SageMaker Studio"
 disableSearch = false
 disableAssetsBusting = false
 
@@ -29,4 +29,3 @@ ordersectionsby = "weight"
 [outputs]
 home = [ "HTML", "AMP", "RSS", "JSON"]
 page = [ "HTML", "AMP"]
-
