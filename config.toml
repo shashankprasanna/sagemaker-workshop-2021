@@ -1,5 +1,5 @@
 RelativeURLs=true
-baseURL = "https://main.dlrve2acyoug9.amplifyapp.com"
+#baseURL = disabled
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Getting Started with Amazon SageMaker Studio"

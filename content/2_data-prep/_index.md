@@ -17,4 +17,4 @@ Dataset source: https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+c
 The output or response variable we'll be building a model to predict is a binary categorical variable **1 or 0**. Where **1** represents a credible customer, who will not default on the payments and **0:** represents a not very credible customer, who will default on the payments. The machine learning problem at hand is to estimate the probability of default.
 
 The screenshot below shows part of the dataset. The red box shows the response variable that we'll train a model to predict.
-![](/images/dataset_csv.png)
+![](/images/setup/dataset_csv.png)
