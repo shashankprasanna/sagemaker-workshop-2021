@@ -239,6 +239,8 @@ Amazon SageMaker Debugger allows debugging machine learning training. Amazon Sag
 
 To view the debugger report, right click on the training job under `Experiments and trial` on the left pane, and click `Open Debugger for insights`
 
+To download the report click `Download report` as shown in the screenshot below. This will download an HTML file. An example of this report is in the Appendix section of this workshop.
+
 ![](/images/train_tune/debug1.png)
 
 You can also manually download the reports from Amazon S3 for local use.

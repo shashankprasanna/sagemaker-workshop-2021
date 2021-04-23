@@ -4,7 +4,7 @@ chapter: false
 weight: 1
 ---
 
-# Welcome to Getting started with Amazon SageMaker Workshop
+# Getting started with Amazon SageMaker Workshop
 
 <div>
 <table style="width:100%">
@@ -17,11 +17,11 @@ weight: 1
 
 <br>
 
-Amazon SageMaker helps data scientists and developers to prepare, build, train, and deploy high-quality machine learning (ML) models quickly by bringing together a broad set of capabilities purpose-built for ML.
+Welcome to the Getting Started with Amazon SageMaker workshop. Amazon SageMaker helps data scientists and developers to prepare, build, train, and deploy high-quality machine learning (ML) models quickly by bringing together a broad set of capabilities purpose-built for ML.
 
 In this workshop you'll learn how to:
 
-* Easily analyze and prepare data using SageMaker Studio and SageMaker Data Wrangler
+* Analyze and prepare data using SageMaker Studio and SageMaker Data Wrangler
 * Build, train, and tune ML models
 * Deploy and monitor ML models, and create fully automated ML workflows with Amazon SageMaker Pipelines
 

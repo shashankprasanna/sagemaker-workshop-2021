@@ -242,12 +242,3 @@ constraints_df.head(10)
 You can also analyze and monitor the data with Monitoring Schedules.
 
 Using `DefaultMonitor.create_monitoring_schedule()`, you can create a model monitoring schedule for an endpoint that compares the baseline resources (constraints and statistics) against the realtime traffic. For more about this method, see the [API documentation](https://sagemaker.readthedocs.io/en/stable/model_monitor.html#sagemaker.model_monitor.model_monitoring.DefaultModelMonitor.create_monitoring_schedule).
-
-#### Deleting resources
-When deleting an endpoint, you need to first delete the monitoring schedule:
-
-
-```python
-predictor.delete_endpoint()
-predictor.delete_model()
-```

@@ -1,0 +1,141 @@
+{
+    "version": "1.0",
+    "post_training_bias_metrics": {
+        "label": "LABEL",
+        "facets": {
+            "SEX": [
+                {
+                    "value_or_threshold": "0",
+                    "metrics": [
+                        {
+                            "name": "AD",
+                            "description": "Accuracy Difference (AD)",
+                            "value": null,
+                            "error": "Facet set is empty"
+                        },
+                        {
+                            "name": "CDDPL",
+                            "description": "Conditional Demographic Disparity in Predicted Labels (CDDPL)",
+                            "value": 0.0
+                        },
+                        {
+                            "name": "DAR",
+                            "description": "Difference in Acceptance Rates (DAR)",
+                            "value": null,
+                            "error": "DLR: Facet set is empty"
+                        },
+                        {
+                            "name": "DCA",
+                            "description": "Difference in Conditional Acceptance (DCA)",
+                            "value": null,
+                            "error": "DCO: Facet set is empty"
+                        },
+                        {
+                            "name": "DCR",
+                            "description": "Difference in Conditional Rejection (DCR)",
+                            "value": null,
+                            "error": "DCO: Facet set is empty"
+                        },
+                        {
+                            "name": "DI",
+                            "description": "Disparate Impact (DI)",
+                            "value": null,
+                            "error": "Facet set is empty"
+                        },
+                        {
+                            "name": "DPPL",
+                            "description": "Difference in Positive Proportions in Predicted Labels (DPPL)",
+                            "value": null,
+                            "error": "Facet set is empty."
+                        },
+                        {
+                            "name": "DRR",
+                            "description": "Difference in Rejection Rates (DRR)",
+                            "value": null,
+                            "error": "DLR: Facet set is empty"
+                        },
+                        {
+                            "name": "FT",
+                            "description": "Flip Test (FT)",
+                            "value": null,
+                            "error": "Facet set is empty"
+                        },
+                        {
+                            "name": "RD",
+                            "description": "Recall Difference (RD)",
+                            "value": null,
+                            "error": "Facet set is empty"
+                        },
+                        {
+                            "name": "TE",
+                            "description": "Treatment Equality (TE)",
+                            "value": null,
+                            "error": "Facet set is empty"
+                        }
+                    ]
+                }
+            ]
+        },
+        "label_value_or_threshold": "1"
+    },
+    "pre_training_bias_metrics": {
+        "label": "LABEL",
+        "facets": {
+            "SEX": [
+                {
+                    "value_or_threshold": "0",
+                    "metrics": [
+                        {
+                            "name": "CDDL",
+                            "description": "Conditional Demographic Disparity in Labels (CDDL)",
+                            "value": 0.0
+                        },
+                        {
+                            "name": "CI",
+                            "description": "Class Imbalance (CI)",
+                            "value": null,
+                            "error": "CI: facet set is empty. Check that x[facet] has non-zero length."
+                        },
+                        {
+                            "name": "DPL",
+                            "description": "Difference in Positive Proportions in Labels (DPL)",
+                            "value": null,
+                            "error": "Facet set is empty."
+                        },
+                        {
+                            "name": "JS",
+                            "description": "Jensen-Shannon Divergence (JS)",
+                            "value": null,
+                            "error": "No instance of common facet found, dataset may be too small"
+                        },
+                        {
+                            "name": "KL",
+                            "description": "Kullback-Liebler Divergence (KL)",
+                            "value": null,
+                            "error": "No instance of common facet found, dataset may be too small"
+                        },
+                        {
+                            "name": "KS",
+                            "description": "Kolmogorov-Smirnov Distance (KS)",
+                            "value": null,
+                            "error": "No instance of common facet found, dataset may be too small"
+                        },
+                        {
+                            "name": "LP",
+                            "description": "L-p Norm (LP)",
+                            "value": null,
+                            "error": "No instance of common facet found, dataset may be too small"
+                        },
+                        {
+                            "name": "TVD",
+                            "description": "Total Variation Distance (TVD)",
+                            "value": null,
+                            "error": "No instance of common facet found, dataset may be too small"
+                        }
+                    ]
+                }
+            ]
+        },
+        "label_value_or_threshold": "1"
+    }
+}

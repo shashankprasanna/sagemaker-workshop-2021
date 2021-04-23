@@ -1,0 +1,1 @@
+{"classification_metrics": {"validation:f1": {"value": 0.6922299861907959}, "train:error": {"value": 0.14271000027656555}, "validation:error": {"value": 0.17167000472545624}, "train:f1": {"value": 0.7504199743270874}, "ObjectiveMetric": {"value": 0.6922299861907959}}}
