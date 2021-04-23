@@ -10,12 +10,3 @@ repo = "https://github.com/matcornic/hugo-theme-learn"
 tags = ["documentation", "grav", "learn", "doc", "search"]
 features = ["documentation", "menu", "nested sections", "search", "mermaid"]
 min_version = 0.25
-
-[author]
-  name = "Mathieu Cornic"
-  homepage = "https://matcornic.github.io/"
-
-[original]
-  name = "Grav Learn"
-  homepage = "https://learn.getgrav.org/"
-  repo = "https://github.com/getgrav/grav-learn"

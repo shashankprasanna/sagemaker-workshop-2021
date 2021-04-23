@@ -4,7 +4,7 @@ weight: 1
 ---
 
 {{% notice info %}}
-Start this section in a new Jupyter notebook
+Start this section in a new Jupyter notebook with the Data Science kernel
 {{% /notice %}}
 
 
@@ -118,6 +118,11 @@ while endpoint_status == 'Creating':
     if endpoint_status == 'Creating':
         time.sleep(60)
 ```
+
+{{% notice info %}}
+This step will take several minutes.
+{{% /notice %}}
+
 
 ### Create a predictor
 

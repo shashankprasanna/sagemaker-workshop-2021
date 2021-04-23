@@ -6,4 +6,4 @@ pre: '<i class="fa fa-film" aria-hidden="true"></i> '
 ---
 
 
-Add a screenshot of each video and explain what is covered in each
+In this section you'll find videos that give you an overview of the workshop interface as well as the workshop content we'll be covering today.

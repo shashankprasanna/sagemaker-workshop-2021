@@ -9,8 +9,8 @@ weight: 1
 <div>
 <table style="width:100%">
  <tr>
-   <th>Shashank Prasanna, <br> Sr. Developer Advocate, AI/ML</th>
-   <th>Amir Imani, <br> AI/ML Specialist SA</th>
+   <th>Shashank Prasanna, <br> Sr. Developer Advocate, AI/ML <br><br> Twitter: @shshnkp <br> linkedin.com/in/shashankprasanna <br> medium.com/@shashankprasanna </th>
+   <th>Amir Imani, <br> AI/ML Specialist SA<br><br><br><br><br></th>
  </tr>
 </table>
 </div>

@@ -4,7 +4,7 @@ weight: 3
 ---
 
 {{% notice info %}}
-Start this section in a new Jupyter notebook
+Start this section in a new Jupyter notebook with the Data Science kernel
 {{% /notice %}}
 
 ```python
@@ -58,7 +58,7 @@ random_state = 42
 %store
 ```
 
-# Create a SageMaker Pipeline to Automate All the Steps from Data Prep to Model Deployment
+### Create a SageMaker Pipeline to Automate All the Steps from Data Prep to Model Deployment
 Now that youve manually done each step in our machine learning workflow, you can create a pipeline which trains a new model, persists the model in SageMaker and then adds the model to the registry.
 
 ### Pipeline parameters
@@ -91,8 +91,12 @@ deploy_model_instance_type = "ml.m4.xlarge"
 xgboost_container = sagemaker.image_uris.retrieve("xgboost", region, "1.2-1")
 ```
 
-## Step 1: Preprocess
+#### Step 1: Preprocess
 
+Download the preprocessing script
+```python
+!wget https://raw.githubusercontent.com/shashankprasanna/sagemaker-workshop-2021/main/notebooks/04_e2e_pipeline/preprocessing.py
+```
 
 ```python
 s3_client.upload_file(Filename='./preprocessing.py', Bucket=default_bucket, Key=f'{prefix}/code/preprocessing.py')
@@ -120,7 +124,7 @@ create_dataset_step = ProcessingStep(
     code=create_dataset_script_uri)
 ```
 
-## Step 2: Train XGBoost Model
+#### Step 2: Train XGBoost Model
 
 
 ```python
@@ -131,7 +135,7 @@ job_name = f'XgboostTrain-' + strftime('%d-%H-%M-%S', gmtime())
 training_job_output_path = f's3://{default_bucket}/{prefix}/training_jobs'
 ```
 
-#### Spot training
+##### Spot training
 
 Managed Spot Training uses Amazon EC2 Spot instance to run training jobs instead of on-demand instances. You can specify which training jobs use spot instances and a stopping condition that specifies how long Amazon SageMaker waits for a job to run using Amazon EC2 Spot instances.
 
@@ -182,7 +186,7 @@ train_step = TrainingStep(
 )
 ```
 
-## Step 3: Model Pre-Deployment Step
+#### Step 3: Model Pre-Deployment Step
 
 
 ```python
@@ -205,7 +209,7 @@ create_model_step = CreateModelStep(
 )
 ```
 
-## Step 4: Run Bias Metrics with Clarify
+#### Step 4: Run Bias Metrics with Clarify
 
 
 ```python
@@ -269,7 +273,7 @@ clarify_step = ProcessingStep(
 )
 ```
 
-## Step 5: Register Model
+#### Step 5: Register Model
 
 
 ```python
@@ -355,8 +359,12 @@ register_step = RegisterModel(
 )
 ```
 
-## Step 6: Deploy Model
+#### Step 6: Deploy Model
 
+Download the deploy_model.py script
+```python
+!wget https://raw.githubusercontent.com/shashankprasanna/sagemaker-workshop-2021/main/notebooks/04_e2e_pipeline/deploy_model.py
+```
 
 ```python
 endpoint_name = "xgboost-model-pipeline-" + strftime('%d-%H-%M-%S', gmtime())
@@ -384,7 +392,7 @@ deploy_step = ProcessingStep(
     code=deploy_model_script_uri)
 ```
 
-## Combine the Pipeline Steps and Run
+#### Combine the Pipeline Steps and Run
 
 
 ```python
@@ -405,7 +413,7 @@ pipeline = Pipeline(
     ])
 ```
 
-## Submit the pipeline definition to the SageMaker Pipeline service
+#### Submit the pipeline definition to the SageMaker Pipeline service
 
 Note: If an existing pipeline has the same name it will be overwritten.
 

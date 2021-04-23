@@ -4,7 +4,7 @@ weight: 1
 ---
 
 {{% notice info %}}
-Start this section in a new Jupyter notebook
+Start this section in a new Jupyter notebook with the Data Science kernel
 {{% /notice %}}
 
 ### Import necessary packages
@@ -213,7 +213,13 @@ training_job_name = xgb_estimator.latest_training_job.job_name
 You should the training start in your Jupyter Notebook:
 ![](/images/train_tune/train1.png)
 
-SageMaker automatically tracks your training jobs. Click on the last option on the menu pane on the left as show in the image below. In the drop down on the top, choose `Experiments and trials`. You should see 1 training job and 2 processing jobs.
+SageMaker automatically tracks your training jobs. Click on the last option on the menu pane on the left as show in the image below. In the drop down on the top, choose `Experiments and trials`.
+Double click on Unassigned trials
+
+
+You should see 1 training job and 2 processing jobs.
+![](/images/train_tune/train20.png)
+
 ![](/images/train_tune/train2.png)
 
 After training is complete, you'll see the total training time and billable seconds on the jupyter notebook.

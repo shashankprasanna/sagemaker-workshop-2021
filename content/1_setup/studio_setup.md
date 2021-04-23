@@ -28,13 +28,13 @@ In this step, you&#39;ll setup Amazon SageMaker Studio. The SageMaker Studio Not
  Amazon SageMaker creates the _AmazonSageMaker-ExecutionRole-\*\*\*_ role.
 ![](/images/setup/image005.png)
 
-1. Click **Submit.** You should see a message saying that the studio is being configured.
+1. Click **Submit.** You should see a message saying that the studio is being configured. This step should take less than 5 minutes.
 ![](/images/setup/image006.png)
 
 1. When Amazon SageMaker Studio is ready, click **Open Studio**
 ![](/images/setup/image007.png)
 
-1. Wait for Amazon SageMaker Studio to load. You'll see the following on your screen and it should take a few minutes launch the interface.
+1. Wait for Amazon SageMaker Studio to load. You'll see the following on your screen and it should take a few minutes launch the interface. This step should take less than 5 mins.
 ![](/images/setup/studio_loading.png)
 
 1. Amazon SageMaker Studio should now be open on a separate browser tab.

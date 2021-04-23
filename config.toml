@@ -29,3 +29,7 @@ ordersectionsby = "weight"
 [outputs]
 home = [ "HTML", "AMP", "RSS", "JSON"]
 page = [ "HTML", "AMP"]
+
+[author]
+name = "Shashank Prasanna"
+homepage = "https://matcornic.github.io/"

@@ -139,3 +139,7 @@ s3_raw_data = response
 %store s3_raw_data
 %store local_raw_path
 ```
+
+{{% notice tip %}}
+Save your notebook with a meaningful name by navigating to `File > Rename Notebook` and entering a name of your choice.
+{{% /notice %}}

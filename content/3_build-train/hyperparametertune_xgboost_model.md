@@ -4,7 +4,7 @@ weight: 2
 ---
 
 {{% notice info %}}
-Start this section in a new Jupyter notebook
+Start this section in a new Jupyter notebook with the Data Science kernel
 {{% /notice %}}
 
 In this section we'll train a second model fix the gender imbalance in the dataset using SMOTE and train the model using XGBoost with hyperparameter tuning and Debugger. We will also save this modelto our registry and eventually approved for deployment.
@@ -240,7 +240,12 @@ tuner.fit({'train': train_input,
                   }
                    )
 ```
+You can also monitor training jobs and hyperparameter tuning job status on the AWS console.
+Navigate to the `AWS Console > Amazon SageMaker > Training > Hyperparameter Tuning`
 
+![](/images/train_tune/hypopt.png)
+
+After training is done, save the name of the training job with the hyperparamets that yielded the best results.
 
 ```python
 training_smote_job_name = tuner.best_training_job()
