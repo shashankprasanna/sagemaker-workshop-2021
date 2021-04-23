@@ -25,6 +25,9 @@ In this workshop you'll learn how to:
 * Build, train, and tune ML models
 * Deploy and monitor ML models, and create fully automated ML workflows with Amazon SageMaker Pipelines
 
+## Workshop Overview video
+{{< youtube Tx5pKYe5p0I >}}
+
 ## Agenda
 
 * Introductions (5 mins)
